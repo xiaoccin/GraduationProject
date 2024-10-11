@@ -8,10 +8,10 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <groupId>org.xiaocc</groupId>
-    <artifactId>user-service</artifactId>
+    <artifactId>point-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>user-service</name>
-    <description>user-service</description>
+    <name>point-service</name>
+    <description>point-service</description>
     <url/>
     <licenses>
         <license/>
@@ -40,10 +40,6 @@
             <scope>test</scope>
         </dependency>
 
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
 
         <!-- nacos的依赖 -->
         <dependency>
@@ -61,6 +57,7 @@
             <artifactId>common-module</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
+
     </dependencies>
 
     <build>

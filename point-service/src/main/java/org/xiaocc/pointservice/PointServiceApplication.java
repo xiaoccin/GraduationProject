@@ -1,13 +1,13 @@
-package org.xiaocc.commonmodule;
+package org.xiaocc.pointservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class CommonModuleApplication {
+public class PointServiceApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(CommonModuleApplication.class, args);
+        SpringApplication.run(PointServiceApplication.class, args);
     }
 
 }
