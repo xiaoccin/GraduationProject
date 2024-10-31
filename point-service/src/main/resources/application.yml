@@ -1,8 +1,8 @@
 spring:
   application:
-    name: user-service
+    name: point-service
   config:
-    import: nacos:user-service-dev.yml
+    import: nacos:point-service-dev.yml
   cloud:
     nacos:
       discovery:
@@ -10,3 +10,4 @@ spring:
       config:
         server-addr: localhost:8848
         file-extension: yml
+
