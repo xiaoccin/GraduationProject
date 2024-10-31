@@ -4,6 +4,7 @@ import jakarta.annotation.Resource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.*;
+import org.xiaocc.commonmodule.entity.Result;
 import org.xiaocc.commonmodule.entity.User;
 import org.xiaocc.commonmodule.entity.util.JwtUtil;
 import org.xiaocc.commonmodule.entity.util.ToolUtil;
@@ -37,7 +38,7 @@ public class UserController {
     }
 
     @PostMapping(value = "/login")
-    public String login(@RequestBody User user){
+    public Result login(@RequestBody User user){
 
         if (ToolUtil.isNotEmpty(user.getAccount())){
             User sourceUser = userService.getById(user.getAccount());
@@ -45,15 +46,15 @@ public class UserController {
                 if (sourceUser.getPassword().equals(user.getPassword())){
                     String token = JwtUtil.getToken(user.getAccount());
                     redisTemplate.opsForValue().set(token,token,JwtUtil.TOKEN_TIME_OUT, TimeUnit.SECONDS);
-                    return token;
+                    return Result.success(token);
                 }else {
-                    return "password error";
+                    return Result.fail("password error");
                 }
             }else {
-                return "account error";
+                return Result.fail("account error");
             }
         }else {
-            return "account null";
+            return Result.fail("account error");
         }
     }
 }
