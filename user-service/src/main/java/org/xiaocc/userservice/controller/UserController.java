@@ -38,7 +38,6 @@ public class UserController {
 
     @PostMapping(value = "/login")
     public String login(@RequestBody User user){
-        //todo 验证登录 - JWT生成token - token存入redis 返回token
 
         if (ToolUtil.isNotEmpty(user.getAccount())){
             User sourceUser = userService.getById(user.getAccount());
